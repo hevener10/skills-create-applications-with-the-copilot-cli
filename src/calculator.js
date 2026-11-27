@@ -11,20 +11,35 @@
  *   divide    (divisão)        -> a / b (erro ao dividir por zero)
  */
 
+// Adição: a + b
+function addition(a, b) {
+  return a + b;
+}
+
+// Subtração: a - b
+function subtraction(a, b) {
+  return a - b;
+}
+
+// Multiplicação: a * b
+function multiplication(a, b) {
+  return a * b;
+}
+
+// Divisão: a / b
+function division(a, b) {
+  if (b === 0) {
+    throw new Error('Division by zero is not allowed.');
+  }
+  return a / b;
+}
+
+// Mapeia os nomes de operação da CLI para as funções
 const operations = {
-  // Adição: a + b
-  add: (a, b) => a + b,
-  // Subtração: a - b
-  subtract: (a, b) => a - b,
-  // Multiplicação: a * b
-  multiply: (a, b) => a * b,
-  // Divisão: a / b
-  divide: (a, b) => {
-    if (b === 0) {
-      throw new Error('Division by zero is not allowed.');
-    }
-    return a / b;
-  },
+  add: addition,
+  subtract: subtraction,
+  multiply: multiplication,
+  divide: division,
 };
 
 function usage() {
