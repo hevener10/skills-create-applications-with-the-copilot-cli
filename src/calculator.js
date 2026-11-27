@@ -109,4 +109,16 @@ function main(argv) {
   }
 }
 
-process.exitCode = main(process.argv.slice(2));
+if (require.main === module) {
+  process.exitCode = main(process.argv.slice(2));
+}
+
+module.exports = {
+  addition,
+  subtraction,
+  multiplication,
+  division,
+  modulo,
+  power,
+  squareRoot,
+};
